@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Lettuce Eat</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        {% load static %}
+
+    </head>
+    <body>
+        <div>
+            <center>
+                <h1>Lettuce Eat</h1>
+                <h1>Cast your votes!</h1>
+            </center>
+        </div>
+        <br><br><br>
+        <div class="row">
+            <div class="col-md-12">
+                <form action="/app/" method="post">
+                    <div class="col-md-2">
+                    </div>
+                    <center>
+                    <div class="col-md-4">          
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <input type="submit" value="Submit" />
+                    </div>
+                    <div class="col-md-2">
+                    </div>
+                    </center>
+                        <div class="col-md-4">
+                        <h2>Priority</h2>
+                        <select id= "option1">
+                            <option value="earliest">earliest</option>
+                            <option value="shortest">shortest</option>
+                        </select><br>
+                    </div>        
+                    <center>
+                    <div class="col-md-2">
+                    </div>
+                </center>
+            </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
